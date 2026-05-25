@@ -1,0 +1,689 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>INMOBILIARIA CLIBORIANS</title>
+
+<!-- Bootstrap -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- Bootstrap Icons -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+
+:root{
+    --azul:#0f172a;
+    --azul2:#1e3a8a;
+    --dorado:#facc15;
+    --blanco:#ffffff;
+    --gris:#f1f5f9;
+    --sombra:0 10px 30px rgba(0,0,0,.15);
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    background:var(--gris);
+    overflow-x:hidden;
+}
+
+/* ===== MARQUESINA ===== */
+.marquesina{
+    background:linear-gradient(90deg,var(--azul),var(--azul2));
+    color:var(--dorado);
+    padding:12px;
+    font-size:1.2rem;
+    font-weight:800;
+    letter-spacing:2px;
+    border-bottom:3px solid var(--dorado);
+}
+
+/* ===== NAVBAR ===== */
+.navbar{
+    background:rgba(15,23,42,.95);
+    backdrop-filter:blur(10px);
+}
+
+.navbar-brand{
+    color:var(--dorado)!important;
+    font-weight:800;
+    font-size:1.6rem;
+}
+
+.nav-link{
+    color:var(--blanco)!important;
+    margin-left:15px;
+    font-weight:500;
+}
+
+.nav-link:hover{
+    color:var(--dorado)!important;
+}
+
+/* ===== HERO ===== */
+.hero{
+    min-height:100vh;
+    background:
+    linear-gradient(rgba(0,0,0,.7),rgba(0,0,0,.7)),
+    url('https://images.unsplash.com/photo-1600585154526-990dced4db0d?q=80&w=1920');
+    background-size:cover;
+    background-position:center;
+    display:flex;
+    align-items:center;
+    text-align:center;
+    color:white;
+}
+
+.hero h1{
+    font-size:4rem;
+    font-weight:800;
+    color:var(--dorado);
+}
+
+.hero p{
+    font-size:1.3rem;
+    max-width:700px;
+    margin:auto;
+    margin-top:20px;
+}
+
+.btn-principal{
+    background:var(--dorado);
+    color:black;
+    padding:15px 40px;
+    border-radius:50px;
+    text-decoration:none;
+    font-weight:700;
+    display:inline-block;
+    margin-top:30px;
+    transition:.3s;
+}
+
+.btn-principal:hover{
+    transform:scale(1.05);
+    background:white;
+}
+
+/* ===== TITULOS ===== */
+.titulo-seccion{
+    text-align:center;
+    margin-bottom:50px;
+}
+
+.titulo-seccion h2{
+    font-size:3rem;
+    font-weight:800;
+    color:var(--azul);
+}
+
+.titulo-seccion p{
+    color:#555;
+    margin-top:10px;
+}
+
+/* ===== BLOQUE ULTIMO INMUEBLE ===== */
+.ultimo-inmueble{
+    background:linear-gradient(135deg,#1e293b,#0f172a);
+    color:white;
+    padding:80px 20px;
+}
+
+.bloque-destacado{
+    background:white;
+    border-radius:25px;
+    overflow:hidden;
+    box-shadow:var(--sombra);
+}
+
+.bloque-destacado img{
+    width:100%;
+    height:500px;
+    object-fit:cover;
+}
+
+.info-destacada{
+    padding:40px;
+}
+
+.info-destacada h3{
+    color:var(--azul);
+    font-size:2.5rem;
+    font-weight:800;
+}
+
+.precio{
+    color:#16a34a;
+    font-size:2rem;
+    font-weight:800;
+    margin:20px 0;
+}
+
+/* ===== TARJETAS ===== */
+.propiedades{
+    padding:100px 0;
+}
+
+.card-casa{
+    border:none;
+    border-radius:25px;
+    overflow:hidden;
+    box-shadow:var(--sombra);
+    transition:.4s;
+    background:white;
+}
+
+.card-casa:hover{
+    transform:translateY(-15px);
+}
+
+.card-casa img{
+    height:260px;
+    object-fit:cover;
+}
+
+.card-body h4{
+    color:var(--azul);
+    font-weight:700;
+}
+
+.etiqueta{
+    background:var(--dorado);
+    color:black;
+    padding:8px 20px;
+    border-radius:50px;
+    font-weight:700;
+    position:absolute;
+    top:15px;
+    left:15px;
+}
+
+.precio-card{
+    color:#16a34a;
+    font-size:1.5rem;
+    font-weight:800;
+}
+
+.btn-ver{
+    background:linear-gradient(90deg,var(--azul),var(--azul2));
+    color:white;
+    width:100%;
+    border:none;
+    padding:12px;
+    border-radius:12px;
+    font-weight:700;
+}
+
+/* ===== FORMULARIO ===== */
+.contacto{
+    background:linear-gradient(135deg,var(--azul),var(--azul2));
+    padding:100px 20px;
+}
+
+.formulario{
+    background:white;
+    padding:50px;
+    border-radius:25px;
+    box-shadow:var(--sombra);
+}
+
+.formulario h2{
+    text-align:center;
+    margin-bottom:30px;
+    color:var(--azul);
+    font-weight:800;
+}
+
+.form-control{
+    padding:15px;
+    border-radius:12px;
+}
+
+.btn-enviar{
+    background:var(--dorado);
+    border:none;
+    width:100%;
+    padding:15px;
+    border-radius:12px;
+    font-weight:800;
+}
+
+/* ===== FOOTER ===== */
+footer{
+    background:#020617;
+    color:white;
+    text-align:center;
+    padding:40px 20px;
+}
+
+.redes i{
+    font-size:2rem;
+    margin:10px;
+    color:var(--dorado);
+}
+
+/* ===== WHATSAPP ===== */
+.whatsapp{
+    position:fixed;
+    bottom:20px;
+    right:20px;
+    width:70px;
+    height:70px;
+    border-radius:50%;
+    background:#25d366;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    color:white;
+    font-size:2rem;
+    text-decoration:none;
+    box-shadow:var(--sombra);
+    z-index:999;
+}
+
+/* ===== RESPONSIVE ===== */
+@media(max-width:768px){
+
+.hero h1{
+    font-size:2.5rem;
+}
+
+.bloque-destacado img{
+    height:300px;
+}
+
+.info-destacada h3{
+    font-size:2rem;
+}
+
+.formulario{
+    padding:25px;
+}
+
+}
+
+</style>
+</head>
+<body>
+
+<!-- MARQUESINA -->
+<div class="marquesina">
+<marquee behavior="scroll" direction="left">
+🏠 INMOBILIARIA CLIBORIANS — LAS MEJORES CASAS Y DEPARTAMENTOS EN BOLIVIA 🏠
+</marquee>
+</div>
+
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg sticky-top">
+<div class="container">
+
+<a class="navbar-brand" href="#">
+<i class="bi bi-buildings-fill"></i>
+CLIBORIANS
+</a>
+
+<button class="navbar-toggler bg-light" data-bs-toggle="collapse" data-bs-target="#menu">
+<span class="navbar-toggler-icon"></span>
+</button>
+
+<div class="collapse navbar-collapse justify-content-end" id="menu">
+<ul class="navbar-nav">
+<li class="nav-item"><a class="nav-link" href="#inicio">Inicio</a></li>
+<li class="nav-item"><a class="nav-link" href="#ultimo">Último Inmueble</a></li>
+<li class="nav-item"><a class="nav-link" href="#casas">Casas</a></li>
+<li class="nav-item"><a class="nav-link" href="#contacto">Contacto</a></li>
+</ul>
+</div>
+
+</div>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="inicio">
+<div class="container">
+
+<h1>
+Encuentra La Casa De Tus Sueños
+</h1>
+
+<p>
+Explora las propiedades más modernas, elegantes y exclusivas de Bolivia.
+Tu nuevo hogar está aquí.
+</p>
+
+<a href="#casas" class="btn-principal">
+<i class="bi bi-house-door-fill"></i>
+Ver Casas
+</a>
+
+</div>
+</section>
+
+<!-- ULTIMO INMUEBLE -->
+<section class="ultimo-inmueble" id="ultimo">
+
+<div class="container">
+
+<div class="titulo-seccion text-white">
+<h2 class="text-warning">
+Nuestro Último Inmueble
+</h2>
+<p class="text-light">
+La propiedad más exclusiva recientemente agregada.
+</p>
+</div>
+
+<div class="bloque-destacado">
+
+<div class="row g-0 align-items-center">
+
+<div class="col-lg-6">
+<img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?q=80&w=1600" alt="Casa premium">
+</div>
+
+<div class="col-lg-6">
+
+<div class="info-destacada">
+
+<h3>Mansión Premium CLIBORIANS</h3>
+
+<p>
+Hermosa mansión moderna con acabados de lujo, piscina,
+terraza panorámica y amplios jardines.
+</p>
+
+<div class="precio">
+$450,000
+</div>
+
+<ul class="list-group mb-4">
+<li class="list-group-item">✅ 6 Habitaciones</li>
+<li class="list-group-item">✅ 5 Baños</li>
+<li class="list-group-item">✅ Piscina</li>
+<li class="list-group-item">✅ Garaje para 4 vehículos</li>
+<li class="list-group-item">✅ Ubicación Premium</li>
+</ul>
+
+<button class="btn btn-dark btn-lg w-100">
+Ver Inmueble
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+</section>
+
+<!-- CASAS EN VENTA -->
+<section class="propiedades" id="casas">
+
+<div class="container">
+
+<div class="titulo-seccion">
+<h2>Todas Las Casas En Venta</h2>
+<p>
+Descubre nuestras mejores propiedades disponibles.
+</p>
+</div>
+
+<div class="row g-4">
+
+<!-- CASA 1 -->
+<div class="col-md-4">
+<div class="card-casa position-relative">
+
+<span class="etiqueta">EN VENTA</span>
+
+<img src="https://images.unsplash.com/photo-1568605114967-8130f3a36994?q=80&w=1200" class="w-100">
+
+<div class="card-body p-4">
+
+<h4>Casa Moderna</h4>
+<p><i class="bi bi-geo-alt-fill"></i> La Paz, Bolivia</p>
+
+<p>
+Casa elegante con diseño moderno y acabados premium.
+</p>
+
+<div class="precio-card">
+$120,000
+</div>
+
+<button class="btn-ver mt-3">
+Ver Detalles
+</button>
+
+</div>
+</div>
+</div>
+
+<!-- CASA 2 -->
+<div class="col-md-4">
+<div class="card-casa position-relative">
+
+<span class="etiqueta">OFERTA</span>
+
+<img src="https://images.unsplash.com/photo-1570129477492-45c003edd2be?q=80&w=1200" class="w-100">
+
+<div class="card-body p-4">
+
+<h4>Departamento Ejecutivo</h4>
+<p><i class="bi bi-geo-alt-fill"></i> Santa Cruz, Bolivia</p>
+
+<p>
+Departamento de lujo con excelente ubicación.
+</p>
+
+<div class="precio-card">
+$90,000
+</div>
+
+<button class="btn-ver mt-3">
+Ver Detalles
+</button>
+
+</div>
+</div>
+</div>
+
+<!-- CASA 3 -->
+<div class="col-md-4">
+<div class="card-casa position-relative">
+
+<span class="etiqueta">PREMIUM</span>
+
+<img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?q=80&w=1200" class="w-100">
+
+<div class="card-body p-4">
+
+<h4>Mansión Exclusiva</h4>
+<p><i class="bi bi-geo-alt-fill"></i> Cochabamba, Bolivia</p>
+
+<p>
+Mansión moderna con áreas verdes y piscina.
+</p>
+
+<div class="precio-card">
+$300,000
+</div>
+
+<button class="btn-ver mt-3">
+Ver Detalles
+</button>
+
+</div>
+</div>
+</div>
+
+<!-- CASA 4 -->
+<div class="col-md-4">
+<div class="card-casa position-relative">
+
+<span class="etiqueta">NUEVA</span>
+
+<img src="https://images.unsplash.com/photo-1605146769289-440113cc3d00?q=80&w=1200" class="w-100">
+
+<div class="card-body p-4">
+
+<h4>Residencia Familiar</h4>
+<p><i class="bi bi-geo-alt-fill"></i> Sucre, Bolivia</p>
+
+<p>
+Residencia cómoda y moderna para familias grandes.
+</p>
+
+<div class="precio-card">
+$150,000
+</div>
+
+<button class="btn-ver mt-3">
+Ver Detalles
+</button>
+
+</div>
+</div>
+</div>
+
+<!-- CASA 5 -->
+<div class="col-md-4">
+<div class="card-casa position-relative">
+
+<span class="etiqueta">TOP</span>
+
+<img src="https://images.unsplash.com/photo-1582268611958-ebfd161ef9cf?q=80&w=1200" class="w-100">
+
+<div class="card-body p-4">
+
+<h4>Casa Minimalista</h4>
+<p><i class="bi bi-geo-alt-fill"></i> Tarija, Bolivia</p>
+
+<p>
+Diseño minimalista con acabados de lujo.
+</p>
+
+<div class="precio-card">
+$180,000
+</div>
+
+<button class="btn-ver mt-3">
+Ver Detalles
+</button>
+
+</div>
+</div>
+</div>
+
+<!-- CASA 6 -->
+<div class="col-md-4">
+<div class="card-casa position-relative">
+
+<span class="etiqueta">VIP</span>
+
+<img src="https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?q=80&w=1200" class="w-100">
+
+<div class="card-body p-4">
+
+<h4>Villa De Lujo</h4>
+<p><i class="bi bi-geo-alt-fill"></i> Beni, Bolivia</p>
+
+<p>
+Villa exclusiva con amplias áreas recreativas.
+</p>
+
+<div class="precio-card">
+$500,000
+</div>
+
+<button class="btn-ver mt-3">
+Ver Detalles
+</button>
+
+</div>
+</div>
+</div>
+
+</div>
+</div>
+</section>
+
+<!-- CONTACTO -->
+<section class="contacto" id="contacto">
+<div class="container">
+
+<div class="formulario mx-auto col-lg-8">
+
+<h2>Solicita Información</h2>
+
+<form>
+
+<div class="mb-3">
+<input type="text" class="form-control" placeholder="Nombre completo">
+</div>
+
+<div class="mb-3">
+<input type="email" class="form-control" placeholder="Correo electrónico">
+</div>
+
+<div class="mb-3">
+<textarea class="form-control" rows="5" placeholder="Mensaje"></textarea>
+</div>
+
+<button class="btn-enviar">
+<i class="bi bi-send-fill"></i>
+Enviar Solicitud
+</button>
+
+</form>
+
+</div>
+
+</div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+
+<h3>INMOBILIARIA CLIBORIANS</h3>
+<p>
+Tu mejor opción en bienes raíces en Bolivia.
+</p>
+
+<div class="redes">
+<i class="bi bi-facebook"></i>
+<i class="bi bi-instagram"></i>
+<i class="bi bi-whatsapp"></i>
+<i class="bi bi-tiktok"></i>
+</div>
+
+<hr>
+
+<p>
+© 2026 — Todos los derechos reservados.
+</p>
+
+</footer>
+
+<!-- WHATSAPP -->
+<a href="https://wa.me/59170000000" class="whatsapp">
+<i class="bi bi-whatsapp"></i>
+</a>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
